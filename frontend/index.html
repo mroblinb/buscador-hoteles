@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HotelBooking - Encuentra y reserva los mejores hoteles en España">
+    <meta name="theme-color" content="#2C3E50">
+    <title>HotelBooking - Reserva de Hoteles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏨</text></svg>">
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+    <header>
+        <a href="/">HotelBooking</a>
+        <a href="/">Contacto</a>
+    </header>
+
+    <section class="hero">
+        <h1>Encuentra tu hotel ideal</h1>
+        <p>Descubre los mejores alojamientos en los destinos más exclusivos de España</p>
+
+        <form class="search-form" id="searchForm" novalidate>
+            <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <div class="input-wrapper">
+                    <span class="icon">📍</span>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Madrid" required autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_entrada">Entrada</label>
+                <div class="input-wrapper">
+                    <span class="icon">📅</span>
+                    <input type="date" id="fecha_entrada" name="fecha_entrada" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_salida">Salida</label>
+                <div class="input-wrapper">
+                    <span class="icon">📅</span>
+                    <input type="date" id="fecha_salida" name="fecha_salida" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="habitaciones">Habitaciones</label>
+                <div class="input-wrapper">
+                    <span class="icon">🛏️</span>
+                    <input type="number" id="habitaciones" name="habitaciones" min="1" value="1" required>
+                </div>
+            </div>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <div class="destacados">
+        <div class="destacados-header">
+            <h2>Hoteles destacados</h2>
+        </div>
+        <div id="destacadosGrid" class="destacados-grid">
+            <div class="loading" style="grid-column:1/-1;padding:1rem;">
+                <div class="spinner" style="width:28px;height:28px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/buscador.js?v=2"></script>
+    <script src="js/destacados.js?v=2"></script>
+</body>
+</html>

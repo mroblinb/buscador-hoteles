@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle del hotel y reserva - HotelBooking">
+    <meta name="theme-color" content="#2C3E50">
+    <title>Detalle del hotel - HotelBooking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏨</text></svg>">
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+    <header>
+        <a href="/">HotelBooking</a>
+        <a href="javascript:history.back()">← Volver</a>
+    </header>
+
+    <div class="container">
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Cargando información del hotel...</p>
+        </div>
+
+        <div id="errorContainer" style="display:none;"></div>
+
+        <div id="detalleContent" style="display:none;">
+            <div class="detalle-layout">
+                <div class="detalle-info">
+                    <div class="detalle-hero">
+                        <img id="hotelImagen" src="" alt="Hotel">
+                        <div class="overlay"></div>
+                    </div>
+                    <h2 id="hotelNombre"></h2>
+                    <p class="ciudad" id="hotelCiudad"></p>
+                    <p class="descripcion" id="hotelDescripcion"></p>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <strong id="hotelPrecio"></strong>
+                            <span>por noche</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong id="hotelHabitaciones"></strong>
+                            <span>habitaciones totales</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong id="hotelDisponibles"></strong>
+                            <span>habitaciones disponibles</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reserva-form">
+                    <h3>Reservar ahora</h3>
+                    <div id="reservaAlert"></div>
+                    <form id="reservaForm" novalidate>
+                        <div class="form-group">
+                            <label for="nombre_cliente">Nombre completo</label>
+                            <input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Ej: Borja Alcaraz" required>
+                            <span class="error-msg" id="errorNombre">El nombre es obligatorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha_entrada">Fecha de entrada</label>
+                            <input type="date" id="fecha_entrada" name="fecha_entrada" required>
+                            <span class="error-msg" id="errorEntrada">Selecciona una fecha de entrada válida</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha_salida">Fecha de salida</label>
+                            <input type="date" id="fecha_salida" name="fecha_salida" required>
+                            <span class="error-msg" id="errorSalida">Selecciona una fecha de salida válida</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_habitaciones">Habitaciones</label>
+                            <input type="number" id="numero_habitaciones" name="numero_habitaciones" min="1" value="1" required>
+                            <span class="error-msg" id="errorHabitaciones">Debes reservar al menos 1 habitación</span>
+                        </div>
+
+                        <div class="resumen" id="resumen">
+                            <div class="linea">
+                                <span>Precio por noche</span>
+                                <span id="resPrecioNoche">€0</span>
+                            </div>
+                            <div class="linea">
+                                <span>Noches</span>
+                                <span id="resNoches">0</span>
+                            </div>
+                            <div class="linea">
+                                <span>Habitaciones</span>
+                                <span id="resHabitaciones">1</span>
+                            </div>
+                            <div class="linea total">
+                                <span>Total</span>
+                                <span id="resTotal">€0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="btnReservar">Confirmar reserva</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/detalle.js?v=2"></script>
+</body>
+</html>

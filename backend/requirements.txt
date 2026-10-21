@@ -1,0 +1,9 @@
+# Este archivo lista las dependencias de Python que deben instalarse para que el backend funcione correctamente.
+# Incluye los paquetes necesarios para crear la API, permitir CORS y conectarse a MySQL.
+
+# Instala Flask, el framework web utilizado para crear la aplicación backend.
+flask
+# Instala Flask-CORS, la extensión que permite habilitar peticiones CORS en la API.
+flask-cors
+# Instala el conector oficial de MySQL para Python, usado para conectar la aplicación con la base de datos.
+mysql-connector-python
